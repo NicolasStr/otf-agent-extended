@@ -57,3 +57,18 @@ This project is licensed under the Mozilla Public License Version 2.0. See the [
 - Base image: [leg100/otf](https://github.com/leg100/otf)
 - AWS CLI: [aws/aws-cli](https://github.com/aws/aws-cli)
 - Azure CLI: [Azure/azure-cli](https://github.com/Azure/azure-cli)
+
+---
+
+## Release Workflow & Package Updates
+
+This repository uses GitHub Actions to automate Docker image builds and releases:
+
+- **Automatic Release:** On every push to the `main` branch, a workflow checks for changes to the base image version or Python package versions (in `python-requirements.txt`).
+- **Version Tagging:** If a new base image version or package version is detected, the workflow automatically tags and publishes a new Docker image version.
+- **How to Update Packages:**
+  1. Edit `python-requirements.txt` to update package versions (e.g., `azure-cli` or `awscli`).
+  2. Commit and push your changes to the `main` branch.
+  3. The workflow will build, tag, and release a new image with the updated versions.
+
+See `.github/workflows/release.yml` for workflow details.

@@ -5,4 +5,4 @@ RUN apk add --no-cache \
 
 RUN pip install --no-cache-dir --upgrade pip
 COPY python-requirements.txt python-requirements.txt
-RUN pip install --no-cache-dir -r python-requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip pip install --no-cache-dir -r python-requirements.txt
