@@ -1,4 +1,4 @@
-FROM docker.io/leg100/otf-agent:0.3.27
+FROM docker.io/leg100/otf-agent:0.4.0
 
 RUN apk add --no-cache \
     py3-pip build-base musl-dev python3-dev libffi-dev openssl-dev cargo make
